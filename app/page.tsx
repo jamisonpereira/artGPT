@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import Footer from "../components/Footer";
@@ -13,8 +15,7 @@ export default function HomePage() {
           href="https://vercel.fyi/roomGPT"
           target="_blank"
           rel="noreferrer"
-          className="border border-gray-700 rounded-lg py-2 px-4 text-gray-400 text-sm mb-5 transition duration-300 ease-in-out"
-        >
+          className="border border-gray-700 rounded-lg py-2 px-4 text-gray-400 text-sm mb-5 transition duration-300 ease-in-out">
           Clone and deploy your own with{" "}
           <span className="text-blue-600">Vercel</span>
         </a>
@@ -32,8 +33,7 @@ export default function HomePage() {
         </h2>
         <Link
           className="bg-blue-600 rounded-xl text-white font-medium px-4 py-3 sm:mt-10 mt-8 hover:bg-blue-500 transition"
-          href="/dream"
-        >
+          href="/dream">
           Generate your dream room
         </Link>
         <div className="flex justify-between items-center w-full flex-col sm:mt-10 mt-6">
