@@ -13,4 +13,7 @@ module.exports = {
     },
   },
   plugins: [require("@tailwindcss/forms"), require("@headlessui/tailwindcss")],
+  corePlugins: {
+    preflight: false,
+  },
 };

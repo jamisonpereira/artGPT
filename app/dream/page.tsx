@@ -19,6 +19,8 @@ import { roomType, rooms, themeType, themes } from "../../utils/dropdownTypes";
 import { makeStyles } from "@mui/styles";
 import { Stepper, Step, StepLabel, Button } from "@mui/material";
 import UploadContent from "./UploadContent";
+import GenerateArt from "./GenerateArt";
+import ReviewArt from "./ReviewArt";
 
 const steps = ["Upload Photo", "Generate Art", "Review Art"];
 
@@ -87,15 +89,15 @@ export default function DreamPage() {
     // Reset other states if needed
   };
 
-  const getStepContent = (stepIndex) => {
+  const getStepContent = (stepIndex: any) => {
     switch (stepIndex) {
       case 0:
         return <UploadContent />;
       // return <UploadContent setUploadedPhoto={setUploadedPhoto} />;
       case 1:
-      // return <GeneratePhoto uploadedPhoto={uploadedPhoto} />;
+        return <GenerateArt />;
       case 2:
-      // return <ReviewPhoto uploadedPhoto={uploadedPhoto} />;
+        return <ReviewArt />;
       default:
         return "Unknown step";
     }

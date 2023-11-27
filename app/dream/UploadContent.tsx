@@ -23,6 +23,7 @@ import SendIcon from "@mui/icons-material/Send";
 
 import { useDispatch, useSelector } from "react-redux";
 import { setOriginalImage } from "../redux/slices/sessionsSlice";
+import { fetchOpenAIAnalysis } from "../redux/slices/sessionsSlice";
 import { AppDispatch, RootState } from "../redux/store";
 
 const CloseButton = ({ onClick }) => (
@@ -51,7 +52,7 @@ const options: UploadWidgetConfig = {
   editor: { images: { crop: false } },
   styles: {
     colors: {
-      primary: "#2563EB", // Primary buttons & links
+      primary: "#1976d2", // Primary buttons & links
       error: "#d23f4d", // Error messages
       shade100: "#000", // Standard text
       shade200: "#fff", // Secondary button text
@@ -89,7 +90,13 @@ export default function UploadContent() {
   };
 
   const handleAnalyzeClick = async () => {
-    console.log("Analyzing...");
+    console.log("Analyze button clicked");
+    if (originalPhoto) {
+      dispatch(fetchOpenAIAnalysis({ imageUrl: originalPhoto }));
+    } else {
+      // Handle the case where originalPhoto is null or undefined
+      console.error("originalPhoto is null or undefined");
+    }
   };
 
   const UploadDropZone = () => (
